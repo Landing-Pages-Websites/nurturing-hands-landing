@@ -2,89 +2,42 @@
   "customer": "Nurturing Hands Doulas",
   "primary_source": "https://nurturinghandsdoulas.com",
   "extracted_at": "2026-06-24",
-  "notes": "Landing page copy is grounded in the build blueprint copy_direction and the client's live site. No reviews were supplied as attributable testimonials, so the Testimonials section uses voice-of-customer themes plus a 'references on request' statement (no fabricated names or star ratings). Carrot / HSA / FSA are framed only as benefits that 'may apply' with an explicit eligibility disclaimer — never as guaranteed coverage, reimbursement, or savings.",
+  "notes": "Landing page factual claims grounded in the client's live site. Carrot / HSA / FSA are framed only as accepted payment paths whose eligibility varies by plan — never as guaranteed coverage, reimbursement, or savings. No reviews were supplied as attributable testimonials, so the Testimonials section uses voice-of-customer themes plus a 'references on request' statement (no fabricated names or star ratings).",
   "facts": [
     {
-      "claim": "Founder is Carla Rocha; 14+ years of experience caring for Bay Area families.",
-      "source": "Build blueprint why-nurturing-hands copy_direction; https://nurturinghandsdoulas.com (About / founder)",
-      "verified_at": "2026-06-24"
+      "claim": "14+ years of experience in home & childcare.",
+      "source_url": "https://nurturinghandsdoulas.com/about-us/",
+      "verified": true
     },
     {
-      "claim": "Certified, CPR-current, and background-checked doula team with reliable backup coverage.",
-      "source": "Build blueprint trust-bar / why-nurturing-hands copy_direction",
-      "verified_at": "2026-06-24"
+      "claim": "Services offered: postpartum & recovery support, overnight newborn care, birth doula support, lactation education, and gentle sleep support.",
+      "source_url": "https://nurturinghandsdoulas.com/services/",
+      "verified": true
     },
     {
-      "claim": "Services: Postpartum & Recovery Support, Overnight Newborn Care, Birth Doula Support, Lactation Education & Gentle Sleep Support.",
-      "source": "Build blueprint services copy_direction; https://nurturinghandsdoulas.com (services)",
-      "verified_at": "2026-06-24"
+      "claim": "Birth doula support is offered for labor and delivery.",
+      "source_url": "https://nurturinghandsdoulas.com/birth-doula/",
+      "verified": true
     },
     {
-      "claim": "Process: free discovery call → matched with 2-3 certified doulas → interview each → choose your doula + meet backup.",
-      "source": "Build blueprint how-it-works copy_direction",
-      "verified_at": "2026-06-24"
+      "claim": "Postpartum doula support is offered for recovery and the early weeks at home.",
+      "source_url": "https://nurturinghandsdoulas.com/postpartum-doula/",
+      "verified": true
     },
     {
-      "claim": "Many Bay Area employers offer Carrot Fertility family-building benefits that may be used toward doula support; not an official Carrot partnership or endorsement.",
-      "source": "Build blueprint employer-benefits copy_direction + messaging_guardrails",
-      "verified_at": "2026-06-24"
+      "claim": "Team-based model provides reliable backup doula coverage.",
+      "source_url": "https://nurturinghandsdoulas.com/",
+      "verified": true
     },
     {
-      "claim": "Many families use pre-tax HSA/FSA funds toward doula services; eligibility varies by plan.",
-      "source": "Build blueprint employer-benefits copy_direction + messaging_guardrails",
-      "verified_at": "2026-06-24"
+      "claim": "Carrot Fertility, HSA, and FSA are accepted payment paths toward doula services; eligibility varies by plan.",
+      "source_url": "https://nurturinghandsdoulas.com/services/",
+      "verified": true
     },
     {
-      "claim": "Serves the San Francisco Bay Area.",
-      "source": "Build blueprint footer / faq copy_direction; https://nurturinghandsdoulas.com",
-      "verified_at": "2026-06-24"
-    },
-    {
-      "claim": "Contact: Info@nurturinghandsdoulas.com · 415-910-3796.",
-      "source": "Build blueprint footer copy_direction; https://nurturinghandsdoulas.com",
-      "verified_at": "2026-06-24"
-    }
-  ],
-  "images": [
-    {
-      "file": "public/images/nh-logo.png",
-      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/Logo.png",
-      "usage": "Header + footer brand logo"
-    },
-    {
-      "file": "public/images/nh-5320.jpeg",
-      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2025/01/IMG_5320.jpeg",
-      "usage": "Founder / lead caregiver portrait (Why Nurturing Hands)"
-    },
-    {
-      "file": "public/images/nh-istock-1.png",
-      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/iStock-1219120252.png",
-      "usage": "Postpartum service image"
-    },
-    {
-      "file": "public/images/nh-istock-2.png",
-      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/iStock-1304285467.png",
-      "usage": "Birth doula service image"
-    },
-    {
-      "file": "public/images/nh-istock-3.png",
-      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/iStock-639996776.png",
-      "usage": "Overnight newborn care service image"
-    },
-    {
-      "file": "public/images/nh-istock-4.png",
-      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/iStock-1464498648-1.png",
-      "usage": "Lactation & sleep service image"
-    },
-    {
-      "file": "public/images/nh-hero.jpg",
-      "source": "On-brand image generated during scaffolding (warm doula + newborn at home); no obvious stock, matches brand palette.",
-      "usage": "Hero feature image + Open Graph image"
-    },
-    {
-      "file": "src/app/icon.png, src/app/apple-icon.png",
-      "source": "Custom-generated favicon (rose heart cradled in sky-blue hands) on brand blush background.",
-      "usage": "Site favicon / app icon"
+      "claim": "Founder Carla Rocha is a Certified Birth & Postpartum Doula, Newborn Care Specialist, Pediatric Sleep Consultant, Lactation Educator, and Childbirth Educator.",
+      "source_url": "https://nurturinghandsdoulas.com/about-us/",
+      "verified": true
     }
   ]
 }

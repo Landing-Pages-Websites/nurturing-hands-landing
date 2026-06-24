@@ -43,3 +43,21 @@ export function ConsultCta({
     </a>
   );
 }
+
+interface CtaRowProps {
+  /** Label for the secondary (ghost/outline) action. */
+  secondaryLabel: string;
+}
+
+/**
+ * Side-by-side primary + secondary actions — both scroll to the lead form.
+ * Render inside a `flex flex-row` container at the call site.
+ */
+export function CtaRow({ secondaryLabel }: CtaRowProps): React.ReactElement {
+  return (
+    <>
+      <ConsultCta variant="rose" />
+      <ConsultCta variant="outline" label={secondaryLabel} />
+    </>
+  );
+}

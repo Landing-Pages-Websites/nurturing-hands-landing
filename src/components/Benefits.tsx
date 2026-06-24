@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/Reveal";
-import { ConsultCta } from "@/components/Cta";
+import { CtaRow } from "@/components/Cta";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Icon, InfoIcon } from "@/components/icons";
 import { BENEFITS, BENEFITS_DISCLAIMER } from "@/lib/content";
@@ -43,8 +43,8 @@ export function Benefits(): React.ReactElement {
           </p>
         </Reveal>
 
-        <Reveal className="mt-10 flex justify-center">
-          <ConsultCta label="Talk through your benefits" />
+        <Reveal className="mt-10 flex flex-row flex-wrap justify-center gap-4">
+          <CtaRow secondaryLabel="Talk through your benefits" />
         </Reveal>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
-import { ConsultCta } from "@/components/Cta";
+import { ConsultCta, CtaRow } from "@/components/Cta";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Icon } from "@/components/icons";
 import { SERVICES, type ServiceItem } from "@/lib/content";
@@ -60,6 +60,10 @@ export function Services(): React.ReactElement {
             <ServiceRow key={service.id} service={service} index={index} />
           ))}
         </div>
+
+        <Reveal className="mt-16 flex flex-row flex-wrap justify-center gap-4">
+          <CtaRow secondaryLabel="Talk to our team" />
+        </Reveal>
       </div>
     </section>
   );

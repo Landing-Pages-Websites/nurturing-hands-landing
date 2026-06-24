@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
-import { ConsultCta } from "@/components/Cta";
+import { CtaRow } from "@/components/Cta";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ChevronDownIcon } from "@/components/icons";
 import { FAQS } from "@/lib/content";
@@ -53,8 +53,8 @@ export function Faq(): React.ReactElement {
             </Reveal>
           ))}
         </div>
-        <Reveal className="mt-12 flex justify-center">
-          <ConsultCta />
+        <Reveal className="mt-12 flex flex-row flex-wrap justify-center gap-4">
+          <CtaRow secondaryLabel="Ask a question" />
         </Reveal>
       </div>
     </section>

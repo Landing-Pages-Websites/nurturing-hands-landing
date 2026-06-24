@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { CtaRow } from "@/components/Cta";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Icon } from "@/components/icons";
 import { VOICE_THEMES, REFERENCES_STATEMENT } from "@/lib/content";
@@ -33,6 +34,10 @@ export function Testimonials(): React.ReactElement {
           <p className="mx-auto max-w-2xl text-center font-body text-base leading-relaxed text-ink/80">
             {REFERENCES_STATEMENT}
           </p>
+        </Reveal>
+
+        <Reveal className="mt-10 flex flex-row flex-wrap justify-center gap-4">
+          <CtaRow secondaryLabel="Request references" />
         </Reveal>
       </div>
     </section>

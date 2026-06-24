@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
-import { ConsultCta } from "@/components/Cta";
+import { CtaRow } from "@/components/Cta";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Icon } from "@/components/icons";
 import { WHY_US_REASONS } from "@/lib/content";
@@ -59,8 +59,8 @@ export function WhyUs(): React.ReactElement {
                 </Reveal>
               ))}
             </ul>
-            <div className="mt-8">
-              <ConsultCta />
+            <div className="mt-8 flex flex-row flex-wrap justify-center gap-4 sm:justify-start">
+              <CtaRow secondaryLabel="Meet our doula team" />
             </div>
           </div>
         </div>

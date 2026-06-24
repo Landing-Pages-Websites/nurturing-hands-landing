@@ -29,6 +29,15 @@ function formatPhone(value: string): string {
   return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
 }
 
+// Phone is optional: an empty value is valid, but a partial one must be blocked.
+function validatePhone(value: string): string {
+  const digits = value.replace(/\D/g, "");
+  if (!digits) return "";
+  return digits.length === 10 ? "" : "Please enter a 10-digit phone number, or leave it blank.";
+}
+
+const PHONE_PATTERN = "\\(\\d{3}\\) \\d{3}-\\d{4}";
+
 function validateRequired(name: RequiredField, value: string): string {
   switch (name) {
     case "firstName":
@@ -68,6 +77,7 @@ export function LeadForm({ idPrefix }: LeadFormProps): React.ReactElement {
 
   const [form, setForm] = useState<Record<FieldName, string>>(EMPTY_FORM);
   const [errors, setErrors] = useState<Partial<Record<RequiredField, string>>>({});
+  const [phoneError, setPhoneError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -75,6 +85,9 @@ export function LeadForm({ idPrefix }: LeadFormProps): React.ReactElement {
   const setFieldValue = (name: FieldName, raw: string): void => {
     const value = name === "phone" ? formatPhone(raw) : raw;
     setForm((prev) => ({ ...prev, [name]: value }));
+    if (name === "phone" && phoneError && validatePhone(value) === "") {
+      setPhoneError("");
+    }
     if (
       (REQUIRED_FIELDS as readonly string[]).includes(name) &&
       errors[name as RequiredField] &&
@@ -120,8 +133,14 @@ export function LeadForm({ idPrefix }: LeadFormProps): React.ReactElement {
   const handleClickSubmit = (): void => {
     const invalid = collectErrors();
     setErrors(invalid);
+    const phoneMsg = validatePhone(form.phone);
+    setPhoneError(phoneMsg);
     if (Object.keys(invalid).length > 0) {
       focusFirstInvalid(invalid);
+      return;
+    }
+    if (phoneMsg) {
+      formRef.current?.querySelector<HTMLElement>('[name="phone"]')?.focus();
       return;
     }
     formRef.current?.requestSubmit();
@@ -130,6 +149,11 @@ export function LeadForm({ idPrefix }: LeadFormProps): React.ReactElement {
   async function performSubmit(): Promise<void> {
     if (inFlightRef.current) return;
     if (Object.keys(collectErrors()).length > 0) return;
+    const phoneMsg = validatePhone(form.phone);
+    if (phoneMsg) {
+      setPhoneError(phoneMsg);
+      return;
+    }
 
     inFlightRef.current = true;
     setSubmitting(true);
@@ -291,11 +315,21 @@ export function LeadForm({ idPrefix }: LeadFormProps): React.ReactElement {
             type="tel"
             inputMode="numeric"
             autoComplete="tel"
+            pattern={PHONE_PATTERN}
+            title="Enter a 10-digit phone number, e.g. (555) 123-4567"
             placeholder="(555) 123-4567"
             value={form.phone}
             onChange={(e) => setFieldValue("phone", e.target.value)}
-            className={`${inputBase} border-border`}
+            onBlur={() => setPhoneError(validatePhone(form.phone))}
+            aria-invalid={phoneError ? "true" : undefined}
+            aria-describedby={phoneError ? `${id("phone")}-error` : undefined}
+            className={`${inputBase} ${phoneError ? "lp-input-invalid" : "border-border"}`}
           />
+          {phoneError ? (
+            <p id={`${id("phone")}-error`} role="alert" aria-live="polite" className="lp-input-error">
+              {phoneError}
+            </p>
+          ) : null}
         </div>
 
         <div>

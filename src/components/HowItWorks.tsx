@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/Reveal";
-import { ConsultCta } from "@/components/Cta";
+import { CtaRow } from "@/components/Cta";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Icon } from "@/components/icons";
 import { HOW_IT_WORKS } from "@/lib/content";
@@ -36,8 +36,8 @@ export function HowItWorks(): React.ReactElement {
           ))}
         </ol>
 
-        <Reveal className="mt-14 flex justify-center">
-          <ConsultCta />
+        <Reveal className="mt-14 flex flex-row flex-wrap justify-center gap-4">
+          <CtaRow secondaryLabel="See how it works" />
         </Reveal>
       </div>
     </section>
