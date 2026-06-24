@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── AJT Bounce brand palette (verified from ajtbounce.com) ── */
+  --color-primary: #ff5400;
+  --color-primary-hover: #e64a00;
+  --color-primary-active: #b23b00;
+  --color-primary-soft: #fff1ea;
+  --color-primary-disabled: #ffbb99;
+
+  --color-secondary: #1fa2e0;
+  --color-secondary-hover: #1789be;
+  --color-secondary-soft: #e8f6fd;
+  /* AA-safe blue for small text / labels on light surfaces */
+  --color-secondary-ink: #0f5e84;
+
+  --color-accent: #ffc400;
+  --color-accent-soft: #fff6d6;
+
+  --color-ink: #0e1726;
+  --color-muted: #5a5a5a;
+  --color-surface: #f4f7fb;
+  --color-border: #e5e7eb;
+  --color-white: #ffffff;
+
+  --color-error: #d92d20;
+  --color-success: #12805c;
+
+  --font-display: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings default to the display face + ink. Wrapped in @layer base so any
+   Tailwind text-color / font utility still wins (known LP gotcha). */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+  }
+}
+
+a[href^="tel:"] {
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 5px;
+}
+
+/* Visible keyboard focus on every interactive element. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31, 162, 224, 0.25);
+  border-color: var(--color-secondary);
+}
+
+/* Form field text + placeholder stay dark even when a field sits on a
+   vibrant / tinted surface (otherwise typed text can render unreadable). */
+.lp-field {
+  color: var(--color-ink) !important;
+}
+.lp-field::placeholder {
+  color: var(--color-muted) !important;
+  opacity: 1;
+}
+
+/* Inline per-field validation error (dedicated class so CSS purge can never
+   drop it). Rendered inside <p role="alert" aria-live="polite">. */
+.lp-input-error {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-error);
+}
+.lp-input-error::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex: none;
+  background-color: var(--color-error);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg>") center / contain no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg>") center / contain no-repeat;
+}
+
+.lp-input-invalid {
+  border-color: var(--color-error) !important;
+  box-shadow: 0 0 0 1px rgba(217, 45, 32, 0.35);
+}
+
+/* ── Scroll-reveal ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  opacity: 0;
+}
+.reveal.in-view {
+  animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Gentle float for hero collage cards ── */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tw-rotate, 0));
+  }
+  50% {
+    transform: translateY(-12px) rotate(var(--tw-rotate, 0));
+  }
+}
+.floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+.floaty-slow {
+  animation: floaty 7s ease-in-out infinite;
+}
+
+/* ── Bouncy CTA pulse ── */
+@keyframes ctaGlow {
+  0%,
+  100% {
+    box-shadow: 0 10px 26px -8px rgba(255, 84, 0, 0.55);
+  }
+  50% {
+    box-shadow: 0 16px 38px -6px rgba(255, 84, 0, 0.8);
+  }
+}
+.pulse-glow {
+  animation: ctaGlow 2.8s ease-in-out infinite;
+}
+
+/* Soft confetti dot field for dark/tinted panels */
+.bg-confetti {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.14) 1.5px, transparent 0);
+  background-size: 26px 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    animation: none;
+  }
+  .floaty,
+  .floaty-slow,
+  .pulse-glow {
+    animation: none;
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "customer": "AJT Bounce & Events",
+  "primary_source": "https://www.ajtbounce.com",
+  "extracted_at": "2026-06-22",
+  "stats": [
+    {
+      "claim": "500+ five-star Google reviews",
+      "source": "https://www.ajtbounce.com/testimonials — 'We Have Over 500 5 Star Reviews On Google!'",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Live scrape of /testimonials page header copy"
+    },
+    {
+      "claim": "Free delivery & professional setup included on every rental",
+      "source": "https://www.ajtbounce.com category pages + customer onboarding brief",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Task brief content_requests + site category copy"
+    },
+    {
+      "claim": "Fully insured & licensed; clean, sanitized equipment",
+      "source": "Task brief content_requests + recurring review themes on /testimonials",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Customer brief + voice-of-customer review analysis"
+    },
+    {
+      "claim": "Serves MA & RI within ~20 miles of Foxborough, MA and Greenville, RI",
+      "source": "Strategy email (two locations, 20-mile radius) + ajtbounce.com delivery-area list",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Strategy email + live delivery-area dropdown"
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "We always use AJT for bounce house rentals for my kids' birthday parties. Good quality product, timely and courteous delivery and pickup, and helpful customer service. They have a great variety of bounce houses — can always find one that matches the theme of the party. Highly recommend!",
+      "source": "https://www.ajtbounce.com/testimonials (verified Google review)",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Live scrape of /testimonials review toggles"
+    },
+    {
+      "text": "We just used AJT for our annual block party. Booking was quick and easy. Company was very helpful and even delivered the bounce house early for extra use! We also had a foam party that was a huge hit. The staff showed up early and made everything effortless on our end. The kids loved it! We will use them again for sure!",
+      "source": "https://www.ajtbounce.com/testimonials (verified Google review)",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Live scrape of /testimonials review toggles"
+    },
+    {
+      "text": "Rented a large inflatable waterslide for my daughter's birthday. The slide was very clean. The guys were super friendly. I would definitely rent from them again!",
+      "source": "https://www.ajtbounce.com/testimonials (verified Google review)",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Live scrape of /testimonials review toggles"
+    },
+    {
+      "text": "Great Value. Very clean, high quality inflatables. We rented a water slide combo and it was the hit of the party!",
+      "source": "https://www.ajtbounce.com/testimonials (verified Google review)",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Live scrape of /testimonials review toggles"
+    },
+    {
+      "text": "I absolutely loved renting from AJT Bounce. We live on the military base and they went above and beyond to get us a bounce house!! 100% recommend renting from them. The delivery guys were amazing — so friendly and funny! Thank you guys, you made our going away party so much better!",
+      "source": "https://www.ajtbounce.com/testimonials (verified Google review)",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Live scrape of /testimonials review toggles"
+    },
+    {
+      "text": "We always use AJT for our kids' birthday parties and they never disappoint. Everything is organized, fun, and stress-free every single time. Highly recommend AJT for any event!",
+      "source": "https://www.ajtbounce.com/testimonials (verified Google review)",
+      "verified_at": "2026-06-22",
+      "extraction_method": "Live scrape of /testimonials review toggles"
+    }
+  ]
+}
