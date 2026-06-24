@@ -1,61 +1,93 @@
 import Image from "next/image";
-import { PhoneIcon, MapPinIcon } from "@/components/icons";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/content";
+import { ConsultCta } from "@/components/Cta";
+import { PhoneIcon, MailIcon, MapPinIcon } from "@/components/icons";
+import {
+  PHONE_DISPLAY,
+  PHONE_HREF,
+  EMAIL,
+  EMAIL_HREF,
+  SERVICE_AREA,
+  BENEFITS_DISCLAIMER,
+  SERVICES,
+} from "@/lib/content";
 
 export function Footer(): React.ReactElement {
   const year = 2026;
   return (
-    <footer className="bg-ink text-white/70">
-      <div className="mx-auto max-w-[1200px] px-4 py-12 sm:px-6">
-        <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
-          <div className="flex flex-col items-center gap-4 md:flex-row">
-            <span className="inline-block rounded-2xl bg-white p-2">
-              <Image
-                src="/images/logo.png"
-                alt="AJT Bounce & Events"
-                width={389}
-                height={450}
-                className="h-14 w-auto"
-              />
-            </span>
-            <div>
-              <p className="font-display text-lg font-bold text-white">AJT Bounce &amp; Events</p>
-              <p className="mt-1 flex items-center justify-center gap-2 text-sm md:justify-start">
-                <MapPinIcon className="h-4 w-4 text-primary" />
-                Serving Massachusetts &amp; Rhode Island
-              </p>
+    <footer className="border-t border-border bg-surface text-ink">
+      <div className="mx-auto max-w-[1200px] px-4 py-14 sm:px-6">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr] md:gap-8">
+          {/* Brand + CTA */}
+          <div>
+            <Image
+              src="/images/nh-logo.png"
+              alt="Nurturing Hands Doulas"
+              width={216}
+              height={158}
+              className="h-14 w-auto"
+            />
+            <p className="mt-4 max-w-xs font-body text-sm leading-relaxed text-muted">
+              Certified, team-based doula support for Bay Area families — birth, postpartum recovery,
+              and overnight newborn care, with warmth you can feel.
+            </p>
+            <div className="mt-6">
+              <ConsultCta className="!px-6 !py-3 !text-sm" />
             </div>
           </div>
 
-          <a
-            href={PHONE_HREF}
-            aria-label={`Call AJT Bounce at ${PHONE_DISPLAY}`}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-display font-semibold text-white shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 hover:bg-primary-hover"
-          >
-            <PhoneIcon className="h-5 w-5" />
-            {PHONE_DISPLAY}
-          </a>
+          {/* Contact */}
+          <div>
+            <h2 className="font-display text-base font-bold text-ink">Get in touch</h2>
+            <ul className="mt-4 space-y-3 font-body text-sm">
+              <li>
+                <a
+                  href={EMAIL_HREF}
+                  className="inline-flex items-center gap-2.5 text-muted transition-colors hover:text-accent"
+                >
+                  <MailIcon className="h-5 w-5 flex-none text-primary-ink" />
+                  {EMAIL}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={PHONE_HREF}
+                  className="inline-flex items-center gap-2.5 text-muted transition-colors hover:text-accent"
+                >
+                  <PhoneIcon className="h-5 w-5 flex-none text-primary-ink" />
+                  {PHONE_DISPLAY}
+                </a>
+              </li>
+              <li className="inline-flex items-center gap-2.5 text-muted">
+                <MapPinIcon className="h-5 w-5 flex-none text-primary-ink" />
+                Serving the {SERVICE_AREA}
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <nav aria-label="Services">
+            <h2 className="font-display text-base font-bold text-ink">Services</h2>
+            <ul className="mt-4 space-y-2.5 font-body text-sm">
+              {SERVICES.map((service) => (
+                <li key={service.id}>
+                  <a
+                    href="#services"
+                    className="text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
+                  >
+                    {service.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/50">
-          <p>
-            © {year} AJT Bounce &amp; Events. All rights reserved. · Water slides, foam parties, bubble
-            parties &amp; bounce houses · Free delivery &amp; setup across MA &amp; RI.
-          </p>
-          <p className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-            <a
-              href="https://www.ajtbounce.com/privacy-policy"
-              className="underline-offset-2 transition-colors hover:text-white hover:underline"
-            >
-              Privacy Policy
-            </a>
-            <span aria-hidden="true">·</span>
-            <a
-              href="https://www.ajtbounce.com/privacy-policy"
-              className="underline-offset-2 transition-colors hover:text-white hover:underline"
-            >
-              Terms of Service
-            </a>
+        {/* Disclaimer + copyright */}
+        <div className="mt-12 border-t border-border pt-6">
+          <p className="font-body text-xs leading-relaxed text-muted">{BENEFITS_DISCLAIMER}</p>
+          <p className="mt-3 font-body text-xs text-muted">
+            © {year} Nurturing Hands Doulas. All rights reserved. · Doulas provide non-medical
+            support and do not replace your medical providers.
           </p>
         </div>
       </div>

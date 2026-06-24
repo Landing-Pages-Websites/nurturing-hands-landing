@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
-import { DualCta } from "@/components/Cta";
+import { ConsultCta } from "@/components/Cta";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ChevronDownIcon } from "@/components/icons";
 import { FAQS } from "@/lib/content";
@@ -24,7 +24,7 @@ function FaqRow({ q, a, index }: { q: string; a: string; index: number }): React
         >
           <span className="font-display text-base font-semibold text-ink md:text-lg">{q}</span>
           <ChevronDownIcon
-            className={`h-5 w-5 shrink-0 text-primary transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+            className={`h-5 w-5 shrink-0 text-accent transition-transform duration-300 ${open ? "rotate-180" : ""}`}
           />
         </button>
       </h3>
@@ -43,12 +43,9 @@ function FaqRow({ q, a, index }: { q: string; a: string; index: number }): React
 
 export function Faq(): React.ReactElement {
   return (
-    <section id="faq" className="bg-white py-20 md:py-28">
+    <section id="faq" className="bg-surface py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <SectionHeading
-          eyebrow="Good to Know"
-          title={<>Frequently Asked Questions</>}
-        />
+        <SectionHeading eyebrow="Good to Know" title={<>Frequently asked questions</>} />
         <div className="mt-10 space-y-3">
           {FAQS.map((faq, i) => (
             <Reveal key={faq.q} delay={i * 50}>
@@ -57,7 +54,7 @@ export function Faq(): React.ReactElement {
           ))}
         </div>
         <Reveal className="mt-12 flex justify-center">
-          <DualCta align="center" tone="light" />
+          <ConsultCta />
         </Reveal>
       </div>
     </section>

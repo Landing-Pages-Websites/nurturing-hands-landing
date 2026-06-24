@@ -1,75 +1,45 @@
-import { PhoneIcon } from "@/components/icons";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/content";
+import { FORM_ANCHOR, CTA_LABEL } from "@/lib/content";
 
-type Tone = "light" | "onDark";
+type Variant = "rose" | "outline" | "sky-soft";
 
-interface DualCtaProps {
-  /** Visual context the buttons sit on. */
-  tone?: Tone;
-  /** Center the pair (default) or left-align. */
-  align?: "center" | "start";
-  /** Primary button label. */
-  primaryLabel?: string;
-  /** Add the attention pulse to the primary button. */
-  pulse?: boolean;
+interface CtaProps {
+  /** Visual style. Default rose-fill for the primary action. */
+  variant?: Variant;
+  /** Override the default "Request a Consultation" label. */
+  label?: string;
+  /** Where the CTA scrolls to (defaults to the lead form). */
+  href?: string;
+  className?: string;
 }
 
-const primaryBase =
-  "group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary text-white font-display font-semibold text-base shadow-lg shadow-primary/30 transition-all duration-300 hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.97]";
+const VARIANTS: Record<Variant, string> = {
+  rose:
+    "bg-accent text-white shadow-lg shadow-accent/25 hover:bg-accent-hover hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.98]",
+  outline:
+    "border-2 border-accent/40 bg-white text-accent hover:border-accent hover:bg-accent-soft hover:-translate-y-0.5 active:scale-[0.98]",
+  "sky-soft":
+    "bg-primary-soft text-primary-ink ring-1 ring-primary/30 hover:bg-primary/20 hover:-translate-y-0.5 active:scale-[0.98]",
+};
 
-export function PrimaryCta({
-  label = "Get a Free Quote",
-  pulse = false,
+const baseCls =
+  "group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-display text-base font-bold transition-all duration-200";
+
+/** The single primary action across the page — scrolls to the lead form. */
+export function ConsultCta({
+  variant = "rose",
+  label = CTA_LABEL,
+  href = FORM_ANCHOR,
   className = "",
-}: {
-  label?: string;
-  pulse?: boolean;
-  className?: string;
-}): React.ReactElement {
+}: CtaProps): React.ReactElement {
   return (
-    <a
-      href="#quote-form"
-      className={`${primaryBase} ${pulse ? "pulse-glow" : ""} ${className}`}
-    >
+    <a href={href} className={`${baseCls} ${VARIANTS[variant]} ${className}`}>
       {label}
-      <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+      <span
+        aria-hidden="true"
+        className="transition-transform duration-200 group-hover:translate-x-1"
+      >
         →
       </span>
     </a>
-  );
-}
-
-export function PhoneCta({ tone = "light" }: { tone?: Tone }): React.ReactElement {
-  const styles =
-    tone === "onDark"
-      ? "border-white/40 text-white hover:bg-white/10"
-      : "border-secondary/50 text-secondary-ink hover:bg-secondary-soft hover:border-secondary";
-  return (
-    <a
-      href={PHONE_HREF}
-      aria-label={`Call AJT Bounce at ${PHONE_DISPLAY}`}
-      className={`inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border-2 bg-transparent font-display font-semibold text-base transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.97] ${styles}`}
-    >
-      <PhoneIcon className="w-5 h-5" />
-      Call {PHONE_DISPLAY}
-    </a>
-  );
-}
-
-export function DualCta({
-  tone = "light",
-  align = "center",
-  primaryLabel = "Get a Free Quote",
-  pulse = false,
-}: DualCtaProps): React.ReactElement {
-  return (
-    <div
-      className={`flex flex-col sm:flex-row gap-3 items-stretch sm:items-center ${
-        align === "center" ? "justify-center" : "justify-start"
-      }`}
-    >
-      <PrimaryCta label={primaryLabel} pulse={pulse} />
-      <PhoneCta tone={tone} />
-    </div>
   );
 }

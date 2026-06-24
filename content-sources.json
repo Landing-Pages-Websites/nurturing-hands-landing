@@ -1,95 +1,90 @@
 {
-  "customer": "Conejo Bros Plumbing",
-  "primary_source": "https://conejobrosplumbing.com",
-  "extracted_at": "2026-06-01",
-  "testimonials": [
+  "customer": "Nurturing Hands Doulas",
+  "primary_source": "https://nurturinghandsdoulas.com",
+  "extracted_at": "2026-06-24",
+  "notes": "Landing page copy is grounded in the build blueprint copy_direction and the client's live site. No reviews were supplied as attributable testimonials, so the Testimonials section uses voice-of-customer themes plus a 'references on request' statement (no fabricated names or star ratings). Carrot / HSA / FSA are framed only as benefits that 'may apply' with an explicit eligibility disclaimer — never as guaranteed coverage, reimbursement, or savings.",
+  "facts": [
     {
-      "name": "Evangeline Tan",
-      "text": "Thanks to Tiago and the Conejo Bros Plumbing team, our sewer drain is now in perfect working order! They were prompt, knowledgeable, and courteous throughout the entire process. Exceptional service!",
-      "source": "https://conejobrosplumbing.com/reviews/ (Google review, JSON-LD Review schema)",
-      "verified_at": "2026-06-01",
-      "extraction_method": "JSON-LD reviewBody + author.name parse from /reviews page"
+      "claim": "Founder is Carla Rocha; 14+ years of experience caring for Bay Area families.",
+      "source": "Build blueprint why-nurturing-hands copy_direction; https://nurturinghandsdoulas.com (About / founder)",
+      "verified_at": "2026-06-24"
     },
     {
-      "name": "Mikie Wu",
-      "text": "I'm extremely grateful to Conejo Bros Plumbing for their exceptional service. Tiago went the extra mile to clear our clogged sewer drain. Friendly, dependable, and highly skilled. A solid 5-star rating!",
-      "source": "https://conejobrosplumbing.com/reviews/ (Google review, JSON-LD Review schema)",
-      "verified_at": "2026-06-01",
-      "extraction_method": "JSON-LD reviewBody + author.name parse"
+      "claim": "Certified, CPR-current, and background-checked doula team with reliable backup coverage.",
+      "source": "Build blueprint trust-bar / why-nurturing-hands copy_direction",
+      "verified_at": "2026-06-24"
     },
     {
-      "name": "Robert Alkana",
-      "text": "Came home to a backed up kitchen and called Conejo Bros Plumbing. Not only did they clean my drain under my sink but they left my stuff underneath nice and organized. Highly recommend them to anyone who needs plumbing help!",
-      "source": "https://conejobrosplumbing.com/reviews/ (Google review, JSON-LD Review schema)",
-      "verified_at": "2026-06-01",
-      "extraction_method": "JSON-LD reviewBody + author.name parse"
+      "claim": "Services: Postpartum & Recovery Support, Overnight Newborn Care, Birth Doula Support, Lactation Education & Gentle Sleep Support.",
+      "source": "Build blueprint services copy_direction; https://nurturinghandsdoulas.com (services)",
+      "verified_at": "2026-06-24"
     },
     {
-      "name": "Joyce Aldoroty",
-      "text": "Kyle did a great job replacing emergency valves, a garbage disposal, and a kitchen faucet. He was professional and communicative — he was awesome! When we still had other problems, Kyle rearranged his schedule and came back.",
-      "source": "https://conejobrosplumbing.com/reviews/ (Google review, JSON-LD Review schema)",
-      "verified_at": "2026-06-01",
-      "extraction_method": "JSON-LD reviewBody + author.name parse (lightly trimmed for length)"
+      "claim": "Process: free discovery call → matched with 2-3 certified doulas → interview each → choose your doula + meet backup.",
+      "source": "Build blueprint how-it-works copy_direction",
+      "verified_at": "2026-06-24"
     },
     {
-      "name": "Ambrose Daye",
-      "text": "Conejo Bros Plumbing is simply incredible! They came through for us when our sewer drain got completely clogged. Tiago handled the job with professionalism and efficiency, getting it done in no time. Highly recommended!",
-      "source": "https://conejobrosplumbing.com/reviews/ (Google review, JSON-LD Review schema)",
-      "verified_at": "2026-06-01",
-      "extraction_method": "JSON-LD reviewBody + author.name parse"
+      "claim": "Many Bay Area employers offer Carrot Fertility family-building benefits that may be used toward doula support; not an official Carrot partnership or endorsement.",
+      "source": "Build blueprint employer-benefits copy_direction + messaging_guardrails",
+      "verified_at": "2026-06-24"
     },
     {
-      "name": "Mark Smith",
-      "text": "Impressed with the expertise of Tiago's plumbing crew. They tackled a complex issue at our business promptly and with precision. Outstanding service!",
-      "source": "https://conejobrosplumbing.com/reviews/ (Google review, JSON-LD Review schema)",
-      "verified_at": "2026-06-01",
-      "extraction_method": "JSON-LD reviewBody + author.name parse"
+      "claim": "Many families use pre-tax HSA/FSA funds toward doula services; eligibility varies by plan.",
+      "source": "Build blueprint employer-benefits copy_direction + messaging_guardrails",
+      "verified_at": "2026-06-24"
+    },
+    {
+      "claim": "Serves the San Francisco Bay Area.",
+      "source": "Build blueprint footer / faq copy_direction; https://nurturinghandsdoulas.com",
+      "verified_at": "2026-06-24"
+    },
+    {
+      "claim": "Contact: Info@nurturinghandsdoulas.com · 415-910-3796.",
+      "source": "Build blueprint footer copy_direction; https://nurturinghandsdoulas.com",
+      "verified_at": "2026-06-24"
     }
-  ],
-  "stats": [
-    {
-      "claim": "5.0 Google rating",
-      "source": "JSON-LD aggregateRating / individual Review ratingValue all = 5 on https://conejobrosplumbing.com/reviews/",
-      "verified_at": "2026-06-01",
-      "method": "parsed ratingValue from Review schema"
-    },
-    {
-      "claim": "Decades of experience / Open 24/7",
-      "source": "Site header banner: 'Decades of experience | Satisfaction guaranteed' and 'Open 24/7' on conejobrosplumbing.com",
-      "verified_at": "2026-06-01",
-      "method": "site header text"
-    },
-    {
-      "claim": "In-house septic design, geological testing, and installation (one of very few CA companies)",
-      "source": "Task input content_requests + corroborated by site septic service pages",
-      "verified_at": "2026-06-01",
-      "method": "task spec + site service nav"
-    }
-  ],
-  "licenses": [
-    "Licensed & insured CA plumbers (site states 'Licensed Plumbers'; specific CSLB number not displayed on site footer)"
-  ],
-  "partnerships": [
-    "GreenSky® financing (0% interest options) — from task content_requests and site /financing page"
-  ],
-  "service_areas": [
-    "Thousand Oaks", "Westlake Village", "Newbury Park", "Moorpark", "Simi Valley",
-    "Agoura Hills", "Calabasas", "Camarillo", "Oxnard", "Ventura", "Santa Paula", "Fillmore"
   ],
   "images": [
-    {"file": "hero-plumber.jpg", "source": "wp-content/uploads/2023/12/Drain-Cleaning-Service-Thumbnail.jpg"},
-    {"file": "septic-tank.jpg", "source": "wp-content/uploads/2023/12/Conejo-Bros-Tank-Pump-.jpg"},
-    {"file": "yard-drains.jpg", "source": "wp-content/uploads/2023/12/Yard-Drains-Image.jpg"},
-    {"file": "drain-cleaning.jpg", "source": "wp-content/uploads/2023/12/Hydro-Jetting-Image.jpg"},
-    {"file": "trenchless.jpg", "source": "wp-content/uploads/2024/01/Before-and-After-Trenchless-Pipe-With-Titles-720x480-1.jpg"},
-    {"file": "camera-inspection.jpg", "source": "wp-content/uploads/2024/01/Conejo-Bros-Plumbing-Camera-Inspection-720x480-2.jpg"},
-    {"file": "emergency-plumbing.jpg", "source": "wp-content/uploads/2023/12/Descaling-Image.jpg"},
-    {"file": "about-team.jpg", "source": "wp-content/uploads/2023/09/services-list-pic.jpg"},
-    {"file": "logo.png", "source": "wp-content/uploads/2024/01/Conejo-Bros-Plumbing-Logo-420px-Width-300dpi.png"},
-    {"file": "src/app/icon.png", "source": "wp-content/uploads/2023/12/cropped-favicon.png"}
-  ],
-  "intentional_removals": [
-    "No pricing shown on page per task spec (content_requests: 'No pricing on page').",
-    "Video review thumbnails omitted (LP scope keeps to text testimonials + still imagery)."
+    {
+      "file": "public/images/nh-logo.png",
+      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/Logo.png",
+      "usage": "Header + footer brand logo"
+    },
+    {
+      "file": "public/images/nh-5320.jpeg",
+      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2025/01/IMG_5320.jpeg",
+      "usage": "Founder / lead caregiver portrait (Why Nurturing Hands)"
+    },
+    {
+      "file": "public/images/nh-istock-1.png",
+      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/iStock-1219120252.png",
+      "usage": "Postpartum service image"
+    },
+    {
+      "file": "public/images/nh-istock-2.png",
+      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/iStock-1304285467.png",
+      "usage": "Birth doula service image"
+    },
+    {
+      "file": "public/images/nh-istock-3.png",
+      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/iStock-639996776.png",
+      "usage": "Overnight newborn care service image"
+    },
+    {
+      "file": "public/images/nh-istock-4.png",
+      "source": "https://nurturinghandsdoulas.com/wp-content/uploads/2024/08/iStock-1464498648-1.png",
+      "usage": "Lactation & sleep service image"
+    },
+    {
+      "file": "public/images/nh-hero.jpg",
+      "source": "On-brand image generated during scaffolding (warm doula + newborn at home); no obvious stock, matches brand palette.",
+      "usage": "Hero feature image + Open Graph image"
+    },
+    {
+      "file": "src/app/icon.png, src/app/apple-icon.png",
+      "source": "Custom-generated favicon (rose heart cradled in sky-blue hands) on brand blush background.",
+      "usage": "Site favicon / app icon"
+    }
   ]
 }

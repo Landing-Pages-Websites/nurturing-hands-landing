@@ -1,18 +1,113 @@
 /**
- * Real AJT Bounce & Events content — grounded in the research bundle
- * (build_context, offer_cro, proof). No invented facts or stats.
- *
- * SEASONAL SWAP: the SERVICES array below is the single source of truth for the
- * services + gallery. To pivot the page to Halloween / Christmas bounce rentals
- * in October, swap the SERVICES entries (image + copy) and the GALLERY tiles —
- * the rest of the page reflows automatically.
+ * Real Nurturing Hands Doulas content — grounded in the page blueprint
+ * copy_direction and the client site. No invented facts, stats, or coverage
+ * promises. Carrot / HSA / FSA are framed only as "may apply" with an explicit
+ * eligibility disclaimer — never as guaranteed coverage, reimbursement, or savings.
  */
 
-export const PHONE_DISPLAY = "(508) 203-5946";
-export const PHONE_HREF = "tel:+15082035946";
+export const PHONE_DISPLAY = "(415) 910-3796";
+export const PHONE_HREF = "tel:+14159103796";
+export const EMAIL = "Info@nurturinghandsdoulas.com";
+export const EMAIL_HREF = "mailto:Info@nurturinghandsdoulas.com";
+export const SERVICE_AREA = "San Francisco Bay Area";
+
+/** Every primary CTA scrolls to the dedicated lead-form section. */
+export const FORM_ANCHOR = "#contact";
+export const CTA_LABEL = "Request a Consultation";
+
+export const BENEFITS_DISCLAIMER =
+  "Eligibility and coverage vary by employer and plan — we'll help you check, but we can't guarantee coverage, reimbursement, or savings.";
+
+export interface TrustPoint {
+  icon: string;
+  label: string;
+}
+
+/** Trust strip shown directly under the hero. */
+export const TRUST_POINTS: readonly TrustPoint[] = [
+  { icon: "badge", label: "Certified doula team" },
+  { icon: "shield", label: "CPR-current & background-checked" },
+  { icon: "clock", label: "14+ years of experience" },
+  { icon: "lifebuoy", label: "Reliable backup coverage" },
+  { icon: "wallet", label: "Accepts Carrot · HSA · FSA" },
+];
+
+/** Compact microtrust row inside the hero copy column. */
+export const HERO_MICROTRUST: readonly string[] = [
+  "Certified team",
+  "14+ years",
+  "Accepts Carrot / HSA / FSA",
+  "Backup coverage",
+];
+
+export interface BenefitCard {
+  id: string;
+  icon: string;
+  eyebrow: string;
+  title: string;
+  body: string;
+}
+
+export const BENEFITS: readonly BenefitCard[] = [
+  {
+    id: "carrot",
+    icon: "gift",
+    eyebrow: "Family-building benefits",
+    title: "Carrot Fertility",
+    body:
+      "Many Bay Area employers now offer Carrot Fertility as part of their family-building benefits — and those benefits may be used toward doula and newborn-care support like ours. If Carrot is part of your plan, we'll help you understand what it includes and how to make the most of it, so you can focus on your family instead of paperwork. Carrot programs differ from one employer to the next, so the details matter. We aren't affiliated with or endorsed by Carrot — we simply work with many families who have it, and we're glad to walk you through your options on your free discovery call.",
+  },
+  {
+    id: "hsa-fsa",
+    icon: "wallet",
+    eyebrow: "Pre-tax accounts",
+    title: "HSA / FSA",
+    body:
+      "Have an HSA or FSA through your employer? Many families choose to put those pre-tax dollars toward doula support, and we're happy to provide the documentation you may need for your plan. Because every plan sets its own rules for what qualifies, it's worth checking your specific account before you assume one way or the other. On your free discovery call we'll explain how families typically use HSA and FSA funds with us and what paperwork tends to help — so you can make an informed decision with your benefits administrator. No guesswork, no pressure, just clear information for your family.",
+  },
+];
+
+export interface HowItWorksStep {
+  num: string;
+  icon: string;
+  title: string;
+  body: string;
+}
+
+export const HOW_IT_WORKS: readonly HowItWorksStep[] = [
+  {
+    num: "01",
+    icon: "chat",
+    title: "Book your free discovery call",
+    body:
+      "Tell us a little about your family and what you're hoping for. This first call is free, friendly, and completely no-obligation — a chance to ask questions and see if we're the right fit.",
+  },
+  {
+    num: "02",
+    icon: "users",
+    title: "We match you with 2–3 doulas",
+    body:
+      "Based on your needs, timing, and personality, we hand-pick two or three doulas from our certified team who would be a wonderful match for your family.",
+  },
+  {
+    num: "03",
+    icon: "heartchat",
+    title: "Interview each doula",
+    body:
+      "Meet your matches individually so you can ask questions and get a feel for each one. There's no pressure here — it's simply about finding the person who feels right.",
+  },
+  {
+    num: "04",
+    icon: "heart",
+    title: "Choose your doula",
+    body:
+      "Pick the doula you connect with best, and we'll introduce your backup too — so you always have reliable coverage if life happens.",
+  },
+];
 
 export interface ServiceItem {
   id: string;
+  icon: string;
   name: string;
   tag: string;
   image: string;
@@ -22,107 +117,107 @@ export interface ServiceItem {
 
 export const SERVICES: readonly ServiceItem[] = [
   {
-    id: "water-slides",
-    name: "Water Slides",
-    tag: "Summer favorite",
-    image: "/images/water-slide-1.jpg",
-    alt: "AJT Bounce inflatable water slide rental with a splash pool",
-    body: "Beat the heat with a towering inflatable water slide that turns any backyard into a summer splash zone. Choose single or dual-lane slides for racing, plus wet-or-dry options so the fun keeps going all season. Every slide arrives clean, sanitized, and ready to go — delivered, professionally set up, and picked up for you. Just add water and watch the kids line up again and again.",
+    id: "postpartum",
+    icon: "heart",
+    name: "Postpartum & Recovery Support",
+    tag: "Most requested",
+    image: "/images/nh-istock-1.png",
+    alt: "Doula gently supporting a parent with their newborn at home",
+    body:
+      "The early weeks home with a newborn are tender and exhausting. Our postpartum doulas step in so you can rest, heal, and bond — caring for your baby while you nap, preparing nourishing meals, tidying the nursery, and being a calm, knowledgeable presence you can ask anything. We support feeding however you choose, soothe a fussy newborn, and help you find your footing as a parent. This is practical, emotional, non-medical care shaped entirely around your family's rhythm — whether you need a few daytime hours a week or steady support through the fourth trimester.",
   },
   {
-    id: "foam-parties",
-    name: "Foam Parties",
-    tag: "Crowd pleaser",
-    image: "/images/foam-party-action.jpg",
-    alt: "Kids playing in a mountain of foam at an AJT Bounce foam party",
-    body: "Bury the whole party in mountains of soft, fluffy foam! Our foam parties are the ultimate group activity for birthdays, block parties, school field days, and community events — with classic, color, and glow options to match any theme. We bring the foam cannon, the pit, and a friendly crew that runs the show, then cleans it all up. It's the kind of mess every kid (and grown-up) wishes for.",
+    id: "overnight",
+    icon: "moon",
+    name: "Overnight Newborn Care",
+    tag: "Rest, restored",
+    image: "/images/nh-istock-3.png",
+    alt: "Peaceful sleeping newborn cared for overnight",
+    body:
+      "Sleep is everything for a recovering parent. With overnight newborn care, one of our experienced doulas stays through the night so you can truly rest. We handle diaper changes, soothing, and settling, bring the baby to you for feeds (or manage bottles to your plan), and keep gentle notes so your mornings start easier. You wake up rested, and your newborn is cared for by someone calm, attentive, and trained in safe-sleep practices. Many families use overnight support in the first weeks home or during a sleep-shaping stretch — as often or as occasionally as you need.",
   },
   {
-    id: "bubble-parties",
-    name: "Bubble Parties",
-    tag: "All ages",
-    image: "/images/bubble-party.jpg",
-    alt: "AJT Bounce bubble party machine filling the air with bubbles",
-    body: "Fill the air with thousands of glittering bubbles for a magical, mess-free experience the little ones adore. Our bubble party setup pumps out non-stop bubbles for dancing, chasing, and popping — perfect for younger crowds, daytime celebrations, and indoor or outdoor events. Like every AJT rental, it shows up clean and ready, set up by our team so you can simply enjoy the show.",
+    id: "birth",
+    icon: "sunrise",
+    name: "Birth Doula Support",
+    tag: "By your side",
+    image: "/images/nh-istock-2.png",
+    alt: "Birth doula reassuring an expecting parent",
+    body:
+      "A birth doula is steady, judgment-free support before, during, and after your baby arrives. We meet with you prenatally to understand your hopes and preferences, stay reachable as your due date nears, and are by your side through labor with comfort measures, position changes, encouragement, and reassurance for you and your partner. We don't replace your medical team — we complement them with continuous, non-clinical support so you feel informed and held through every stage. After the birth, we follow up to help you settle in. Whatever path your birth takes, you won't go through it alone.",
   },
   {
-    id: "bounce-houses",
-    name: "Bounce Houses & Combos",
-    tag: "Year-round",
-    image: "/images/bounce-house-2.jpg",
-    alt: "AJT Bounce themed combo bounce house with a slide",
-    body: "From classic castles to themed combos with built-in slides, climbs, and obstacle courses, we have a bounce house to match any party theme and age group. Our huge variety means you can always find the perfect fit — and combos pack bouncing, sliding, and climbing into one showstopping centerpiece. Clean, inspected, fully insured, and delivered and set up free, so the only thing you have to do is party.",
+    id: "lactation-sleep",
+    icon: "sparkle",
+    name: "Lactation Education & Gentle Sleep Support",
+    tag: "Feeding & sleep",
+    image: "/images/nh-istock-4.png",
+    alt: "Caregiver supporting a baby during a daytime visit",
+    body:
+      "Feeding and sleep are where new parents feel the most pressure — and where good support changes everything. Our lactation education helps you build confidence with latch, positioning, supply questions, pumping, and bottle feeding, with patient guidance that meets your goals (this is educational support, not medical treatment). Our gentle, responsive sleep support helps you read your baby's cues and ease into healthier rhythms without harsh methods. We tailor everything to your baby's age and temperament and your family's values, so you leave each visit with a clear, doable next step instead of conflicting advice from the internet.",
   },
 ];
 
-export interface GalleryItem {
-  image: string;
-  alt: string;
+export interface TrustReason {
+  icon: string;
+  title: string;
+  body: string;
 }
 
-export const GALLERY: readonly GalleryItem[] = [
-  { image: "/images/water-slide-2.jpg", alt: "Tropical inflatable water slide rental" },
-  { image: "/images/foam-party-kids.jpg", alt: "Inflatable foam pit rental" },
-  { image: "/images/bubble-octoblast.jpg", alt: "Giant octopus inflatable" },
-  { image: "/images/bounce-house-1.jpg", alt: "Birthday cake themed bounce house" },
-  { image: "/images/foam-glow.jpg", alt: "AJT foam party — kids in the foam pit" },
-  { image: "/images/bounce-house-3.jpg", alt: "Sphere dome bounce house rental" },
+export const WHY_US_REASONS: readonly TrustReason[] = [
+  {
+    icon: "clock",
+    title: "14+ years of experience",
+    body: "More than a decade caring for Bay Area families through birth, recovery, and those first tender months at home.",
+  },
+  {
+    icon: "badge",
+    title: "Certified, CPR-current & background-checked",
+    body: "Every doula on our team is certified, holds current CPR training, and is fully background-checked before they ever meet your family.",
+  },
+  {
+    icon: "lifebuoy",
+    title: "Reliable backup coverage",
+    body: "Life happens — so every family is introduced to a backup doula and is never left without trusted support when they need it.",
+  },
+  {
+    icon: "heart",
+    title: "Founder-led, team-based care",
+    body: "Founded and guided by Carla Rocha, our close-knit team works the way she does: warm, dependable, and genuinely present.",
+  },
 ];
 
-export interface Review {
-  quote: string;
-  result: string;
+export interface VoiceTheme {
+  icon: string;
+  title: string;
+  body: string;
 }
 
-/* Verbatim verified Google reviews from proof.json. */
-export const REVIEWS: readonly Review[] = [
+/**
+ * Voice-of-customer themes — NOT fabricated named reviews or star ratings.
+ * Per the blueprint, real attributable testimonials weren't supplied, so we
+ * describe the kind of experience families have and offer references on request.
+ */
+export const VOICE_THEMES: readonly VoiceTheme[] = [
   {
-    quote:
-      "We always use AJT for bounce house rentals for my kids' birthday parties. Good quality product, timely and courteous delivery and pickup, and helpful customer service. They have a great variety of bounce houses — can always find one that matches the theme of the party. Highly recommend!",
-    result: "Repeat customer · birthday parties",
+    icon: "moon",
+    title: "Rest in the fourth trimester",
+    body: "The gift families mention most is rest — knowing someone experienced is caring for their newborn so they can finally sleep, heal, and feel human again.",
   },
   {
-    quote:
-      "We just used AJT for our annual block party. Booking was quick and easy. Company was very helpful and even delivered the bounce house early for extra use! We also had a foam party that was a huge hit. The staff showed up early and made everything effortless on our end. The kids loved it! We will use them again for sure!",
-    result: "Block party + foam party",
+    icon: "users",
+    title: "A doula who truly fit",
+    body: "Parents value being matched thoughtfully and getting to choose the doula who felt right for their family — never assigned a stranger.",
   },
   {
-    quote:
-      "Rented a large inflatable waterslide for my daughter's birthday. The slide was very clean. The guys were super friendly. I would definitely rent from them again!",
-    result: "Water slide birthday",
-  },
-  {
-    quote:
-      "Great Value. Very clean, high quality inflatables. We rented a water slide combo and it was the hit of the party!",
-    result: "Water slide combo",
-  },
-  {
-    quote:
-      "I absolutely loved renting from AJT Bounce. We live on the military base and they went above and beyond to get us a bounce house!! 100% recommend renting from them. The delivery guys were amazing — so friendly and funny! Thank you guys, you made our going away party so much better!",
-    result: "Going-away party",
-  },
-  {
-    quote:
-      "We always use AJT for our kids' birthday parties and they never disappoint. Everything is organized, fun, and stress-free every single time. Highly recommend AJT for any event!",
-    result: "Stress-free every time",
+    icon: "heart",
+    title: "Support without judgment",
+    body: "Whether feeding goes to plan or takes a different path, families appreciate calm, non-judgmental guidance that meets them exactly where they are.",
   },
 ];
 
-export interface TownGroup {
-  state: string;
-  towns: readonly string[];
-}
-
-export const SERVICE_AREA: readonly TownGroup[] = [
-  {
-    state: "Massachusetts",
-    towns: ["Foxborough", "Mansfield", "Wrentham", "Sharon", "Walpole", "Attleboro", "Norwood"],
-  },
-  {
-    state: "Rhode Island",
-    towns: ["Greenville", "Providence", "Cranston", "Warwick"],
-  },
-];
+export const REFERENCES_STATEMENT =
+  "We're proud of the relationships we build with the families we serve — and we're glad to share references from past clients during your free discovery call.";
 
 export interface Faq {
   q: string;
@@ -131,34 +226,40 @@ export interface Faq {
 
 export const FAQS: readonly Faq[] = [
   {
-    q: "Do you deliver and set everything up?",
-    a: "Yes! Free delivery, professional setup, and pickup are included on every single rental across MA & RI. Our crew handles the heavy lifting and makes sure everything is safe and ready before the fun starts — you don't lift a finger.",
+    q: "Will my employer benefit or HSA/FSA cover doula support?",
+    a: "It may — many Bay Area families use Carrot family-building benefits or pre-tax HSA/FSA funds toward doula support. But eligibility and coverage vary by employer and plan, so we can't promise coverage, reimbursement, or savings. What we can do is help you understand your options and provide documentation you may need; the final word always comes from your plan or benefits administrator.",
   },
   {
-    q: "Which towns do you serve?",
-    a: "We serve Massachusetts and Rhode Island within about 20 miles of Foxborough, MA and Greenville, RI — including Foxborough, Mansfield, Wrentham, Sharon, Walpole, Attleboro, Norwood, Providence, Cranston, Warwick, and the surrounding towns. Not sure if you're in range? Just ask when you request your quote.",
+    q: "What does a doula actually do?",
+    a: "A doula provides practical and emotional support — not medical care. Depending on the type of support, that can mean comfort and reassurance during labor, caring for your newborn so you can rest, help with feeding and gentle sleep, light newborn-related tasks, and simply being an experienced, calming presence. We complement your medical providers; we never replace them.",
   },
   {
-    q: "Are you insured, and is the equipment clean?",
-    a: "Absolutely. AJT Bounce is fully insured and licensed, and every inflatable is cleaned and sanitized before it reaches your party. Clean, high-quality equipment is one of the things our customers mention most in their reviews.",
+    q: "What areas do you serve?",
+    a: "We serve families across the San Francisco Bay Area. If you're not sure whether you're in our range, just ask on your discovery call and we'll let you know.",
   },
   {
-    q: "How far in advance should I book?",
-    a: "As early as you can — especially for summer weekends. Prime dates and our most popular water slides and foam parties book up fast, and the best-weather window closes by September. Reserve your date now to lock it in.",
+    q: "How does matching work?",
+    a: "After your free discovery call, we match you with two or three certified doulas suited to your needs and personality. You interview each one and choose who feels right — and we introduce a backup doula so you're always covered.",
   },
   {
-    q: "What kinds of events do you do?",
-    a: "Birthday parties, backyard gatherings, block parties, school field days, church and community events, fundraisers — you name it. With water slides, foam parties, bubble parties, and a huge variety of bounce houses and combos, we have something fun for every age and occasion.",
+    q: "When should I book?",
+    a: "Earlier is easier — many families reach out during pregnancy so their doula is lined up before baby arrives, but it's never too late. If you already have a newborn at home, we can often arrange support quickly. The best first step is a free discovery call.",
   },
   {
-    q: "How do I get a price?",
-    a: "Fill out the quick quote form or call us at (508) 203-5946. We'll get you a fast, free, no-obligation quote and help you pick the perfect setup for your event and space.",
+    q: "How does pricing work?",
+    a: "Every family's needs are different, so we talk through pricing personally on your free discovery call once we understand the kind of support you're looking for. There's no obligation, and we'll be transparent about options — including how Carrot, HSA, or FSA benefits may apply.",
   },
 ];
 
-export const TIMELINE_OPTIONS: readonly string[] = [
-  "Within the next week",
-  "Within 1-2 weeks",
-  "Within 2-4 weeks",
-  "4+ weeks out",
+export interface ServiceOption {
+  value: string;
+  label: string;
+}
+
+export const SERVICE_INTEREST_OPTIONS: readonly ServiceOption[] = [
+  { value: "postpartum", label: "Postpartum support" },
+  { value: "overnight", label: "Overnight newborn care" },
+  { value: "birth", label: "Birth support" },
+  { value: "lactation-sleep", label: "Lactation & sleep support" },
+  { value: "not-sure", label: "Not sure yet" },
 ];
